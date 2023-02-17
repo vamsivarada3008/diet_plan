@@ -1,5 +1,10 @@
 import 'package:diet_plan/views/DietHome.dart';
+import 'package:diet_plan/views/breakfast.dart';
 import 'package:diet_plan/views/calorieTake.dart';
+import 'package:diet_plan/views/dinner.dart';
+import 'package:diet_plan/views/eveningsnack.dart';
+import 'package:diet_plan/views/lunch.dart';
+import 'package:diet_plan/views/morningsnack.dart';
 import 'package:flutter/material.dart';
 
 // Define a list of options for the radio button
@@ -319,7 +324,32 @@ class LevelPageState extends State<LevelPage> {
                 height: height!,
                 weight: weight!,
                 level: selectedLevel!);
-            calory = (weightGoalsMap[weightvalue]?["calory"]).ceil();
+            calory = (weightGoalsMap[weightvalue]?["calory"]).toInt();
+            // for (var fruit in breakfastList) {
+            //   if (fruit.isChecked == true) {
+            //     caloriebreakfast = caloriebreakfast! + fruit.cal!;
+            //   }
+            // }
+            // for (var fruit in morningsnackList) {
+            //   if (fruit.isChecked == true) {
+            //     caloriemorningsnack = caloriemorningsnack! + fruit.cal!;
+            //   }
+            // }
+            // for (var fruit in dinnerList) {
+            //   if (fruit.isChecked == true) {
+            //     caloriedinner = caloriedinner! + fruit.cal!;
+            //   }
+            // }
+            // for (var fruit in lunchList) {
+            //   if (fruit.isChecked == true) {
+            //     calorielunch = calorielunch! + fruit.cal!;
+            //   }
+            // }
+            // for (var fruit in eveningsnackList) {
+            //   if (fruit.isChecked == true) {
+            //     calorieeveningsnack = calorieeveningsnack! + fruit.cal!;
+            //   }
+            // }
 
             setState(() {});
             Navigator.pushAndRemoveUntil(

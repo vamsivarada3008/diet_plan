@@ -1,17 +1,14 @@
-import 'dart:ffi';
-
 import 'package:diet_plan/views/DietHome.dart';
+import 'package:diet_plan/views/add.dart';
+import 'package:diet_plan/views/breakfast.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-int sum = 0;
-
-class Mydelegate extends SearchDelegate {
+class breakfastadd extends SearchDelegate {
   List<SearchTerms> opted = [];
   final List<SearchTerms> searchTerms;
   final String name;
 
-  Mydelegate({required this.searchTerms, required this.name});
+  breakfastadd({required this.searchTerms, required this.name});
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
@@ -71,7 +68,7 @@ class Mydelegate extends SearchDelegate {
                   } else {
                     opted.remove(searchTerms[index]);
                   }
-                  searchTermo[index].isChecked = value;
+                  breakfastList[index].isChecked = value;
                 });
               },
             );
@@ -111,7 +108,7 @@ class Mydelegate extends SearchDelegate {
                     sum -= result.cal!;
                   }
 
-                  searchTermo[index].isChecked = value;
+                  breakfastList[index].isChecked = value;
                 });
               },
             );
