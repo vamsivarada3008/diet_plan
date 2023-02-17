@@ -313,6 +313,15 @@ class LevelPageState extends State<LevelPage> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
+            receive(
+                age: age!,
+                gender: gender!,
+                height: height!,
+                weight: weight!,
+                level: selectedLevel!);
+            calory = (weightGoalsMap[weightvalue]?["calory"]).ceil();
+
+            setState(() {});
             Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(builder: (context) => DietHome()),

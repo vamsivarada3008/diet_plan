@@ -54,18 +54,18 @@ class CalorieTake extends StatefulWidget {
   State<CalorieTake> createState() => _CalorieTakeState();
 }
 
-Future receive() async {
-  int age;
-  String gender;
-  int height;
-  int weight;
-  String level;
+Future receive(
+    {String level = "level_1",
+    required String age,
+    required String gender,
+    required String height,
+    required String weight}) async {
   var queryParameters = {
-    'age': '25',
-    'gender': 'male',
-    'height': '180',
-    'weight': '70',
-    'activitylevel': 'level_4'
+    'age': age,
+    'gender': gender,
+    'height': height,
+    'weight': weight,
+    'activitylevel': level
   };
 
   var url = 'https://fitness-calculator.p.rapidapi.com/dailycalorie';
@@ -88,6 +88,20 @@ Future receive() async {
 }
 
 class _CalorieTakeState extends State<CalorieTake> {
+  TextEditingController ageController = TextEditingController();
+  TextEditingController heightController = TextEditingController();
+  TextEditingController genderController = TextEditingController();
+  TextEditingController weightController = TextEditingController();
+
+  @override
+  void dispose() {
+    ageController.dispose();
+    heightController.dispose();
+    genderController.dispose();
+    weightController.dispose();
+    super.dispose();
+  }
+
   level(String level) {
     setState(() {
       setlevel = level;
@@ -112,21 +126,133 @@ class _CalorieTakeState extends State<CalorieTake> {
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
-                TextWidget(
-                  name: "Age",
-                  subName: "Name",
+                Column(
+                  children: [
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Age",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 3 / 4,
+                          child: TextField(
+                            controller: ageController,
+                            decoration: InputDecoration(
+                              labelText: "Age in years",
+                              border: OutlineInputBorder(),
+                            ),
+                            onChanged: (value) {
+                              age = value;
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-                TextWidget(
-                  name: "Gender",
-                  subName: "Gender",
+                Column(
+                  children: [
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Gender",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 3 / 4,
+                          child: TextField(
+                            controller: genderController,
+                            decoration: InputDecoration(
+                              labelText: "Enter you gender male/female",
+                              border: OutlineInputBorder(),
+                            ),
+                            onChanged: (value) {
+                              gender = value;
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-                TextWidget(
-                  name: "Height",
-                  subName: "Height in cm",
+                Column(
+                  children: [
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Height",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 3 / 4,
+                          child: TextField(
+                            controller: heightController,
+                            decoration: InputDecoration(
+                              labelText: "height in cms",
+                              border: OutlineInputBorder(),
+                            ),
+                            onChanged: (value) {
+                              height = value;
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-                TextWidget(
-                  name: "Weight",
-                  subName: "Weight in Kgs",
+                Column(
+                  children: [
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Weight",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 3 / 4,
+                          child: TextField(
+                            controller: weightController,
+                            decoration: InputDecoration(
+                              labelText: "weight in kgs",
+                              border: OutlineInputBorder(),
+                            ),
+                            onChanged: (value) {
+                              weight = value;
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 20,
@@ -270,7 +396,12 @@ class _CalorieTakeState extends State<CalorieTake> {
             valueConvert(setlevel!, setkg!);
             print("weight value");
             print(weightvalue);
-            receive();
+            receive(
+                age: age!,
+                gender: gender!,
+                height: height!,
+                weight: weight!,
+                level: "level_4");
 
             print(weightGoalsMap[weightvalue]);
 
@@ -283,52 +414,5 @@ class _CalorieTakeState extends State<CalorieTake> {
           },
           child: Icon(Icons.arrow_forward),
         ));
-  }
-}
-
-class TextWidget extends StatefulWidget {
-  final String name;
-  final String subName;
-  const TextWidget({super.key, required this.name, required this.subName});
-
-  @override
-  State<TextWidget> createState() => _TextWidgetState();
-}
-
-class _TextWidgetState extends State<TextWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 20,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              widget.name,
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(
-              width: 15,
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 3 / 4,
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: widget.subName,
-                  border: OutlineInputBorder(),
-                ),
-                onChanged: (value) {
-                  age = value;
-                  // receive();
-                },
-              ),
-            ),
-          ],
-        ),
-      ],
-    );
   }
 }

@@ -3,6 +3,7 @@ import 'package:diet_plan/views/calorieTake.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+dynamic calory = 0;
 List<SearchTerms> searchTermo = [
   SearchTerms("a", "breakfast", 25),
   SearchTerms("Apple", "Lunch", 28),
@@ -97,8 +98,8 @@ class _DietHomeState extends State<DietHome> {
                       const SizedBox(
                         width: 10,
                       ),
-                      const Text(
-                        "Eat upto 2350 Cal",
+                      Text(
+                        "Eat upto ${calory}",
                         style: TextStyle(
                             fontSize: 25, fontWeight: FontWeight.bold),
                       ),
@@ -158,9 +159,6 @@ class display extends StatefulWidget {
 
 class _displayState extends State<display> {
   var result;
-  void handle() {
-    setState(() {});
-  }
 
   int? calorie = 0;
   @override
@@ -208,9 +206,7 @@ class _displayState extends State<display> {
                               calorie = calorie! + fruit.cal!;
                             }
                           }
-                          setState(() {
-                            searchTermo;
-                          });
+                          setState(() {});
                         });
                         print(result);
                       },
