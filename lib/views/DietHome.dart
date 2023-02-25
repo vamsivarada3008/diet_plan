@@ -85,7 +85,7 @@ class _DietHomeState extends State<DietHome> {
                           TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
-                      width: 100,
+                      width: 50,
                     ),
                     const Icon(
                       IconData(0xf558, fontFamily: 'MaterialIcons'),
