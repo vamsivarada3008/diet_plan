@@ -82,7 +82,7 @@ class _lunchState extends State<lunch> {
                       },
                       icon: const Icon(
                         IconData(0xf52d, fontFamily: 'MaterialIcons'),
-                        color: Colors.orange,
+                        color: Colors.pink,
                         size: 30,
                       ))
                 ],
@@ -116,7 +116,7 @@ class _lunchState extends State<lunch> {
                       style: TextStyle(fontSize: 20),
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.orange,
+                      color: Colors.pink,
                       borderRadius: BorderRadius.circular(20),
                     ),
                   );

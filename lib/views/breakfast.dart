@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 int? caloriebreakfast = 0;
 List<SearchTerms> breakfastList = [
-  SearchTerms("orange", "breakfast", 25),
+  SearchTerms("pink", "breakfast", 25),
   SearchTerms("Apple", "breakfast", 28),
   SearchTerms("Banana", "breakfast", 45),
   SearchTerms("Mango", "breakfast", 48),
@@ -83,7 +83,7 @@ class _breakfastState extends State<breakfast> {
                       },
                       icon: const Icon(
                         IconData(0xf52d, fontFamily: 'MaterialIcons'),
-                        color: Colors.orange,
+                        color: Colors.pink,
                         size: 30,
                       ))
                 ],
@@ -117,7 +117,7 @@ class _breakfastState extends State<breakfast> {
                       style: TextStyle(fontSize: 20),
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.orange,
+                      color: Colors.pink,
                       borderRadius: BorderRadius.circular(20),
                     ),
                   );

@@ -69,9 +69,8 @@ class LevelPageState extends State<LevelPage> {
                   padding: EdgeInsets.all(10),
                   margin: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
-                    color: selectedLevel == "level_1"
-                        ? Colors.orange
-                        : Colors.white,
+                    color:
+                        selectedLevel == "level_1" ? Colors.pink : Colors.white,
                     border: Border.all(color: Colors.grey),
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
@@ -94,7 +93,7 @@ class LevelPageState extends State<LevelPage> {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          color: Colors.orange,
+                          color: Colors.pink,
                         ),
                         child: Icon(
                           IconData(0xf54a, fontFamily: 'MaterialIcons'),
@@ -133,9 +132,8 @@ class LevelPageState extends State<LevelPage> {
                   padding: EdgeInsets.all(10),
                   margin: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
-                    color: selectedLevel == "level_2"
-                        ? Colors.orange
-                        : Colors.white,
+                    color:
+                        selectedLevel == "level_2" ? Colors.pink : Colors.white,
                     border: Border.all(color: Colors.grey),
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
@@ -158,7 +156,7 @@ class LevelPageState extends State<LevelPage> {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          color: Colors.orange,
+                          color: Colors.pink,
                         ),
                         child: Icon(
                           IconData(0xf51b, fontFamily: 'MaterialIcons'),
@@ -197,9 +195,8 @@ class LevelPageState extends State<LevelPage> {
                   padding: EdgeInsets.all(10),
                   margin: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
-                    color: selectedLevel == "level_3"
-                        ? Colors.orange
-                        : Colors.white,
+                    color:
+                        selectedLevel == "level_3" ? Colors.pink : Colors.white,
                     border: Border.all(color: Colors.grey),
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
@@ -222,7 +219,7 @@ class LevelPageState extends State<LevelPage> {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          color: Colors.orange,
+                          color: Colors.pink,
                         ),
                         child: Icon(
                           IconData(0xe549, fontFamily: 'MaterialIcons'),
@@ -261,9 +258,8 @@ class LevelPageState extends State<LevelPage> {
                   padding: EdgeInsets.all(10),
                   margin: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
-                    color: selectedLevel == "level_4"
-                        ? Colors.orange
-                        : Colors.white,
+                    color:
+                        selectedLevel == "level_4" ? Colors.pink : Colors.white,
                     border: Border.all(color: Colors.grey),
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
@@ -286,7 +282,7 @@ class LevelPageState extends State<LevelPage> {
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          color: Colors.orange,
+                          color: Colors.pink,
                         ),
                         child: Icon(
                           IconData(0xf0df, fontFamily: 'MaterialIcons'),

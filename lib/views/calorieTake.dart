@@ -276,7 +276,7 @@ class _CalorieTakeState extends State<CalorieTake> {
                                 ),
                                 decoration: BoxDecoration(
                                   color: setlevel == "loss weight"
-                                      ? Colors.orange
+                                      ? Colors.pink
                                       : Colors.white,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -297,7 +297,7 @@ class _CalorieTakeState extends State<CalorieTake> {
                                 ),
                                 decoration: BoxDecoration(
                                   color: setlevel == "gain weight"
-                                      ? Colors.orange
+                                      ? Colors.pink
                                       : Colors.white,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -324,7 +324,7 @@ class _CalorieTakeState extends State<CalorieTake> {
                                 ),
                                 decoration: BoxDecoration(
                                   color: setkg == "0.25 kg"
-                                      ? Colors.orange
+                                      ? Colors.pink
                                       : Colors.white,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -347,7 +347,7 @@ class _CalorieTakeState extends State<CalorieTake> {
                                 ),
                                 decoration: BoxDecoration(
                                   color: setkg == "0.5 kg"
-                                      ? Colors.orange
+                                      ? Colors.pink
                                       : Colors.white,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
@@ -370,7 +370,7 @@ class _CalorieTakeState extends State<CalorieTake> {
                                 ),
                                 decoration: BoxDecoration(
                                   color: setkg == "1 kg"
-                                      ? Colors.orange
+                                      ? Colors.pink
                                       : Colors.white,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
